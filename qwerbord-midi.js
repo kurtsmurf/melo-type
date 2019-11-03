@@ -154,26 +154,37 @@ sequencer.addEventListener('keyup', (e) => {
   document.getElementById(e.key).classList.remove('active')
 })
 
+let loop
+
 sequencer.onfocus = e => {
+  if (loop) {loop.stop()}
   Tone.Transport.stop()
 }
 
 sequencer.onchange = e => {
   str = e.target.value.trim()
+  Tone.Transport.cancel()
+  Tone.Transport.bpm = 180
 
   if (str === '') {
     return
   }
 
-  Tone.Transport.timeSignature = str.length
-  console.log(Tone.Transport.timeSignature)
-
-  new Tone.Loop(time => {
+  loop = new Tone.Loop(time => {
     str.split('').forEach((character, index) => {
-      synth.triggerAttackRelease(keyToFrequency(character), '4n', `+0:${index}:0`)
+      const time = `+0:${index}:0`
+      synth.triggerAttackRelease(keyToFrequency(character), '4n', time)
+
+      Tone.Transport.schedule(() => {
+        document.getElementById(character).classList.add('active')
+      }, time)
+
+      Tone.Transport.schedule(() => {
+        document.getElementById(character).classList.remove('active')
+      }, `+0:${index + 1}:0`)
     })
+  }, `0:${str.length}:0`)
 
-  }, '1n').start()
-
+  loop.start()
   Tone.Transport.start()
 }
