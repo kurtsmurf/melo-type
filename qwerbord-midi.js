@@ -115,11 +115,18 @@ Object.keys(keyboard).forEach(key => {
   gridItem.style.width = '3rem'
   gridItem.style.height = '3rem'
   gridItem.style.border = 'dashed pink'
-  gridItem.style.textAlign = 'center'
+  gridItem.style.display = 'flex'
+  gridItem.style.alignItems = 'center'
+  gridItem.style.justifyContent = 'center'
+  // gridItem.style.textAlign = 'center'
 
   gridItem.id = key
-  gridItem.innerText = key
 
+  const label = document.createElement('div')
+  label.style.fontSize = '1.4rem'
+  label.innerText = key
+
+  gridItem.appendChild(label)
   grid.appendChild(gridItem)
 })
 
@@ -135,6 +142,21 @@ synth.toMaster()
 
 const sequencer = document.createElement('textarea')
 sequencer.id = 'sequencer'
+sequencer.style.border = 'solid pink'
+sequencer.style.width = '20rem'
+sequencer.style.height = '10rem'
+sequencer.style.outlineWidth = '0'
+// sequencer.placeholder =
+// `cvdg||dgutgdvz||
+// vght||utgvgd||||
+// cvdg||dgutgdvz||
+// cvdg||hgdvcv||||
+
+// tu67||66ututgv||
+// tu67||66utvn||||
+// ttt-||99pupkgv||
+// cvng||hgdvcv||||`
+sequencer.placeholder = 'Enter text to start the sequencer...'
 document.body.appendChild(sequencer)
 
 sequencer.addEventListener('keydown', (e) => {
@@ -161,17 +183,17 @@ sequencer.onfocus = e => {
   Tone.Transport.stop()
 }
 
-sequencer.onchange = e => {
-  str = e.target.value.trim()
+sequencer.onblur = e => {
+  const sequence = e.target.value.replace(/\s/g, '')
   Tone.Transport.cancel()
   Tone.Transport.bpm = 180
 
-  if (str === '') {
-    return
-  }
+  if (sequence === '') { return }
 
   loop = new Tone.Loop(time => {
-    str.split('').forEach((character, index) => {
+    sequence.split('').forEach((character, index) => {
+      if (character === '|') { return }
+
       const time = `+0:${index}:0`
       synth.triggerAttackRelease(keyToFrequency(character), '4n', time)
 
@@ -183,7 +205,7 @@ sequencer.onchange = e => {
         document.getElementById(character).classList.remove('active')
       }, `+0:${index + 1}:0`)
     })
-  }, `0:${str.length}:0`)
+  }, `0:${sequence.length}:0`)
 
   loop.start()
   Tone.Transport.start()
