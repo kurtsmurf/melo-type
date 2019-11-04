@@ -117,15 +117,20 @@ Object.keys(keyboard).forEach(key => {
   DomKeyboard.appendChild(keyboardKey)
 })
 
-const synth = new Tone.Synth({
-  envelope: {
-    attack: 0.05,
-    decay: 0.1,
-    sustain: 0.3,
-    release: 0.1
-  }
-})
-synth.toMaster()
+// const synth = new Tone.Synth({
+//   envelope: {
+//     attack: 0.05,
+//     decay: 0.1,
+//     sustain: 0.3,
+//     release: 0.1
+//   }
+// })
+// synth.toMaster()
+
+var synth = new Tone.MembraneSynth({
+	"octaves" : 1,
+	"pitchDecay" : 0.1
+}).toMaster()
 
 const sequencer = document.querySelector('.sequencer')
 sequencer.addEventListener('keydown', (e) => {
@@ -155,7 +160,7 @@ sequencer.onfocus = e => {
 sequencer.onblur = e => {
   const sequence = e.target.value.replace(/\s/g, '')
   Tone.Transport.cancel()
-  Tone.Transport.bpm.value = 400
+  Tone.Transport.bpm.value = 480
 
   if (sequence === '') { return }
 

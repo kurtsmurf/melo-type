@@ -52,3 +52,24 @@ document.body.appendChild(pre)
 
 // vghu97uh vghu97uh vghu97uh vghu97uh 
 // vghy97yh vghy97yh vghy97yh vghy97yh 
+
+
+
+
+// ft|dt|vt|ct| ft|dt|vt|ct|
+// hy|gy|fy|dy| hy|gy|fy|di|
+
+// ft5dt5vt5ct5 ft5dt5vt5ct5
+// hy7gy7fy7dy7 hy7gy7fy7dyi
+
+
+
+// s||s||y|||y||y||
+// s||s||y|||8068ry
+// s||s||y|||y||y||
+// s||s||y|||08oyjf
+
+// cfr676rf cfr676rf cfr676rf cfr676rf 
+// cgy676yg cgy676yg cgy676yg cgy676yg 
+// bji898ij bji898ij bji898ij bji898ij 
+// cgy676yg cgy676yg cgy676yg cgy676yg 
