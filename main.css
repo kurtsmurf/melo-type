@@ -7,9 +7,9 @@ body {
 }
 .sequencer {
   font-size: 2rem;
-  width: 20rem;
+  width: 34rem;
   border: solid pink;
-  height: 10rem;
+  height: 14rem;
   outline-width: 0;
 }
 

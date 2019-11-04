@@ -155,7 +155,7 @@ sequencer.onfocus = e => {
 sequencer.onblur = e => {
   const sequence = e.target.value.replace(/\s/g, '')
   Tone.Transport.cancel()
-  Tone.Transport.bpm = 180
+  Tone.Transport.bpm.value = 400
 
   if (sequence === '') { return }
 
