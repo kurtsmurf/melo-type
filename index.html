@@ -7,20 +7,22 @@
   <title>qwerbord-midi</title>
   <script src="node_modules/tone/build/Tone.js"></script>
   <link rel="stylesheet" href="main.css">
-  <style>
-    body {
-      font-family: "Open Sans"
-    }
-    .active {
-      background: pink;
-      color: white;
-    }
-    #sequencer {
-      font-size: 2rem;
-    }
-  </style>
 </head>
 <body>
+  <div class="keyboard-container">
+    <div class="keyboard">
+    </div>
+  </div>
+  <textarea name="sequencer" cols="30"
+    rows="10" class="sequencer"
+    placeholder="Enter text to start the sequencer..."></textarea>
+  <div class="controls" style="display: inline-block">
+    <p style="color: red">|___ volume control ___|</p>
+    <p style="color: red">|___ pulse control ____|</p>
+  </div>
+  <p>All whitespace will be ignored.</p>
+  <p>Use the "|" character for a one-beat rest.</p>
+  <p style="color: red">Handle un-supported characters.</p>
 </body>
 </html>
 <script src="qwerbord-midi.js"></script>

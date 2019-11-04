@@ -75,12 +75,12 @@ const midiFrequencies = [
   11175.3, 11839.82, 12543.85
 ]
 
+
 let rowOffset = 3
 let lowestNote = 60
 
 const keyToMidiNote = (key) => {
   const keyObj = keyboard[key]
-
   return (
     lowestNote +
     keyObj.index +
@@ -96,38 +96,25 @@ const keyToFrequency = (key) => {
   return midiNoteToFrequency(keyToMidiNote(key))
 }
 
-const gridContainer = document.createElement('div')
-const grid = document.createElement('div')
-grid.style.display = 'inline-grid'
-grid.style.rowGap = '1rem'
-grid.style.columnGap = '1rem'
-grid.style.marginBottom = '1rem'
-document.body.appendChild(gridContainer)
-gridContainer.appendChild(grid)
+const DomKeyboard = document.querySelector('.keyboard')
+document.querySelector('.keyboard-container').appendChild(DomKeyboard)
 
 Object.keys(keyboard).forEach(key => {
-  const gridItem = document.createElement('div')
-  gridItem.style.gridRowStart = 4 - keyboard[key].row
-  gridItem.style.gridRowEnd = 4 - keyboard[key].row + 1
-  gridItem.style.gridColumnStart = keyboard[key].index
-  gridItem.style.gridColumnEnd = keyboard[key].index + 1
+  const keyboardKey = document.createElement('div')
+  keyboardKey.style.gridRowStart = 4 - keyboard[key].row
+  keyboardKey.style.gridRowEnd = 4 - keyboard[key].row + 1
+  keyboardKey.style.gridColumnStart = keyboard[key].index
+  keyboardKey.style.gridColumnEnd = keyboard[key].index + 1
 
-  gridItem.style.width = '3rem'
-  gridItem.style.height = '3rem'
-  gridItem.style.border = 'dashed pink'
-  gridItem.style.display = 'flex'
-  gridItem.style.alignItems = 'center'
-  gridItem.style.justifyContent = 'center'
-  // gridItem.style.textAlign = 'center'
+  keyboardKey.className = 'keyboard-key'
+  keyboardKey.id = key
 
-  gridItem.id = key
+  const keyboardKeyLabel = document.createElement('div')
+  keyboardKeyLabel.className = 'keyboard-key_label'
+  keyboardKeyLabel.innerText = key
 
-  const label = document.createElement('div')
-  label.style.fontSize = '1.4rem'
-  label.innerText = key
-
-  gridItem.appendChild(label)
-  grid.appendChild(gridItem)
+  keyboardKey.appendChild(keyboardKeyLabel)
+  DomKeyboard.appendChild(keyboardKey)
 })
 
 const synth = new Tone.Synth({
@@ -140,25 +127,7 @@ const synth = new Tone.Synth({
 })
 synth.toMaster()
 
-const sequencer = document.createElement('textarea')
-sequencer.id = 'sequencer'
-sequencer.style.border = 'solid pink'
-sequencer.style.width = '20rem'
-sequencer.style.height = '10rem'
-sequencer.style.outlineWidth = '0'
-// sequencer.placeholder =
-// `cvdg||dgutgdvz||
-// vght||utgvgd||||
-// cvdg||dgutgdvz||
-// cvdg||hgdvcv||||
-
-// tu67||66ututgv||
-// tu67||66utvn||||
-// ttt-||99pupkgv||
-// cvng||hgdvcv||||`
-sequencer.placeholder = 'Enter text to start the sequencer...'
-document.body.appendChild(sequencer)
-
+const sequencer = document.querySelector('.sequencer')
 sequencer.addEventListener('keydown', (e) => {
   const keyObj = keyboard[e.key]
   if (!keyObj) {return}
