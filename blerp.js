@@ -73,3 +73,28 @@ document.body.appendChild(pre)
 // cgy676yg cgy676yg cgy676yg cgy676yg 
 // bji898ij bji898ij bji898ij bji898ij 
 // cgy676yg cgy676yg cgy676yg cgy676yg 
+
+
+// blerp|blerp|blerp|blerp|
+// xler[|xler[|xler[|xler[|
+// xfhj[|xfhj[|xfhj[|xfhj[|
+// xfhjp|xfhjp|xfhjp|xfhjp|
+
+// a|d|f|e|t|f|d|y|
+// o|p|y|r|t|e|f|d|
+// a|f|t|6|9|7|t|f|
+// d|7|9|7|6|y|t|e|
+// w|5|7|5|u|j|h|f|
+// d|y|i|y|t|g|f|s|
+// a|r|y|r|e|a|d|f|
+// r|t|f|d|a|7|k|f|
+
+// alt ending
+// a|d|f|e|t|f|d|y|
+// o|p|y|r|t|e|f|d|
+// a|f|t|6|9|7|t|f|
+// d|7|9|7|6|y|t|e|
+// w|5|7|5|u|j|h|f|
+// d|y|i|y|t|g|f|s|
+// a|r|y|r|e|c|a|d|
+// f|h|d|f|a|7|k|f|
