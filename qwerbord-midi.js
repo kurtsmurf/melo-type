@@ -117,16 +117,6 @@ Object.keys(keyboard).forEach(key => {
   DomKeyboard.appendChild(keyboardKey)
 })
 
-// const synth = new Tone.Synth({
-//   envelope: {
-//     attack: 0.05,
-//     decay: 0.1,
-//     sustain: 0.3,
-//     release: 0.1
-//   }
-// })
-// synth.toMaster()
-
 var synth = new Tone.MembraneSynth({
 	"octaves" : 1,
 	"pitchDecay" : 0.1
@@ -166,7 +156,7 @@ sequencer.onblur = e => {
 
   loop = new Tone.Loop(time => {
     sequence.split('').forEach((character, index) => {
-      if (character === '|') { return }
+      if (character.match(/[\\|]/)) { return }
 
       const time = `+0:${index}:0`
       synth.triggerAttackRelease(keyToFrequency(character), '4n', time)

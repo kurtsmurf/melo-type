@@ -6,6 +6,14 @@
 body {
   font-family: "Open Sans"
 }
+
+@import url('https://fonts.googleapis.com/css?family=B612+Mono&display=swap');
+
+h1 {
+  margin: 0 0 .7rem 0;
+  font-family: 'B612 Mono', monospace;
+}
+
 .active {
   background: pink;
   color: white;

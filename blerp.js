@@ -64,6 +64,14 @@ document.body.appendChild(pre)
 
 
 
+//ft|dt|vt|ct|xy
+//ft|dt|vt|ct|xy
+//.l|,l|ml|nl|vl
+//.l|,l|ml|nl|vl
+// ^ the //s are part of it on this one
+
+
+
 // s||s||y|||y||y||
 // s||s||y|||8068ry
 // s||s||y|||y||y||
@@ -98,3 +106,21 @@ document.body.appendChild(pre)
 // d|y|i|y|t|g|f|s|
 // a|r|y|r|e|c|a|d|
 // f|h|d|f|a|7|k|f|
+
+
+// c||b||f|||j|||||
+// c||b||f|||j|||||
+// y||j||f|||b|||||
+// y||j||f|||b|||||
+
+// 60||||60||||60||||
+// 60||||60||||60||||
+// 68||||68||||68||||
+// 68||||68||||68||||
+
+
+
+// \\h\\e\\u\\\\f\\
+// \\h\\e\\u\\\\f\\
+// \\h\\e\\i\\\\d\\
+// \\h\\e\\i\\\\d\\
