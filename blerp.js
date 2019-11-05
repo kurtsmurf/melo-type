@@ -124,3 +124,11 @@ document.body.appendChild(pre)
 // \\h\\e\\u\\\\f\\
 // \\h\\e\\i\\\\d\\
 // \\h\\e\\i\\\\d\\
+
+
+
+// 0|b|p|w| i|b|p|w|
+// 0|b|p|w| i|b|p|w|
+
+// =|v|p|e| i|v|p|e|
+// =|v|p|e| i|v|p|e|
