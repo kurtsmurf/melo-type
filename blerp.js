@@ -132,3 +132,9 @@ document.body.appendChild(pre)
 
 // =|v|p|e| i|v|p|e|
 // =|v|p|e| i|v|p|e|
+
+
+// v||vv|v||vv|v|k|
+// c||cc|c||cc|c|l|
+// z||zz|z||zz|z|;|
+// c||cc|c||cc|c|l|
