@@ -1,49 +1,49 @@
 const keyboard = {
-  "0": { "index": 9, "row": 3, active: false },
-  "1": { "index": 0, "row": 3, active: false },
-  "2": { "index": 1, "row": 3, active: false },
-  "3": { "index": 2, "row": 3, active: false },
-  "4": { "index": 3, "row": 3, active: false },
-  "5": { "index": 4, "row": 3, active: false },
-  "6": { "index": 5, "row": 3, active: false },
-  "7": { "index": 6, "row": 3, active: false },
-  "8": { "index": 7, "row": 3, active: false },
-  "9": { "index": 8, "row": 3, active: false },
-  "z": { "index": 0, "row": 0, active: false },
-  "x": { "index": 1, "row": 0, active: false },
-  "c": { "index": 2, "row": 0, active: false },
-  "v": { "index": 3, "row": 0, active: false },
-  "b": { "index": 4, "row": 0, active: false },
-  "n": { "index": 5, "row": 0, active: false },
-  "m": { "index": 6, "row": 0, active: false },
-  ",": { "index": 7, "row": 0, active: false },
-  ".": { "index": 8, "row": 0, active: false },
-  "/": { "index": 9, "row": 0, active: false },
-  "a": { "index": 0, "row": 1, active: false },
-  "s": { "index": 1, "row": 1, active: false },
-  "d": { "index": 2, "row": 1, active: false },
-  "f": { "index": 3, "row": 1, active: false },
-  "g": { "index": 4, "row": 1, active: false },
-  "h": { "index": 5, "row": 1, active: false },
-  "j": { "index": 6, "row": 1, active: false },
-  "k": { "index": 7, "row": 1, active: false },
-  "l": { "index": 8, "row": 1, active: false },
-  ";": { "index": 9, "row": 1, active: false },
-  "'": { "index": 10, "row": 1, active: false },
-  "q": { "index": 0, "row": 2, active: false },
-  "w": { "index": 1, "row": 2, active: false },
-  "e": { "index": 2, "row": 2, active: false },
-  "r": { "index": 3, "row": 2, active: false },
-  "t": { "index": 4, "row": 2, active: false },
-  "y": { "index": 5, "row": 2, active: false },
-  "u": { "index": 6, "row": 2, active: false },
-  "i": { "index": 7, "row": 2, active: false },
-  "o": { "index": 8, "row": 2, active: false },
-  "p": { "index": 9, "row": 2, active: false },
-  "[": { "index": 10, "row": 2, active: false },
-  "]": { "index": 11, "row": 2, active: false },
-  "-": { "index": 10, "row": 3, active: false },
-  "=": { "index": 11, "row": 3, active: false }
+  "0": { "index": 9, "row": 3, "active": false },
+  "1": { "index": 0, "row": 3, "active": false },
+  "2": { "index": 1, "row": 3, "active": false },
+  "3": { "index": 2, "row": 3, "active": false },
+  "4": { "index": 3, "row": 3, "active": false },
+  "5": { "index": 4, "row": 3, "active": false },
+  "6": { "index": 5, "row": 3, "active": false },
+  "7": { "index": 6, "row": 3, "active": false },
+  "8": { "index": 7, "row": 3, "active": false },
+  "9": { "index": 8, "row": 3, "active": false },
+  "z": { "index": 0, "row": 0, "active": false },
+  "x": { "index": 1, "row": 0, "active": false },
+  "c": { "index": 2, "row": 0, "active": false },
+  "v": { "index": 3, "row": 0, "active": false },
+  "b": { "index": 4, "row": 0, "active": false },
+  "n": { "index": 5, "row": 0, "active": false },
+  "m": { "index": 6, "row": 0, "active": false },
+  ",": { "index": 7, "row": 0, "active": false },
+  ".": { "index": 8, "row": 0, "active": false },
+  "/": { "index": 9, "row": 0, "active": false },
+  "a": { "index": 0, "row": 1, "active": false },
+  "s": { "index": 1, "row": 1, "active": false },
+  "d": { "index": 2, "row": 1, "active": false },
+  "f": { "index": 3, "row": 1, "active": false },
+  "g": { "index": 4, "row": 1, "active": false },
+  "h": { "index": 5, "row": 1, "active": false },
+  "j": { "index": 6, "row": 1, "active": false },
+  "k": { "index": 7, "row": 1, "active": false },
+  "l": { "index": 8, "row": 1, "active": false },
+  ";": { "index": 9, "row": 1, "active": false },
+  "'": { "index": 10, "row": 1, "active": false },
+  "q": { "index": 0, "row": 2, "active": false },
+  "w": { "index": 1, "row": 2, "active": false },
+  "e": { "index": 2, "row": 2, "active": false },
+  "r": { "index": 3, "row": 2, "active": false },
+  "t": { "index": 4, "row": 2, "active": false },
+  "y": { "index": 5, "row": 2, "active": false },
+  "u": { "index": 6, "row": 2, "active": false },
+  "i": { "index": 7, "row": 2, "active": false },
+  "o": { "index": 8, "row": 2, "active": false },
+  "p": { "index": 9, "row": 2, "active": false },
+  "[": { "index": 10, "row": 2, "active": false },
+  "]": { "index": 11, "row": 2, "active": false },
+  "-": { "index": 10, "row": 3, "active": false },
+  "=": { "index": 11, "row": 3, "active": false }
 }
 
 const midiFrequencies = [
@@ -75,16 +75,15 @@ const midiFrequencies = [
   11175.3, 11839.82, 12543.85
 ]
 
-
 let rowOffset = 3
 let lowestNote = 60
 
 const keyToMidiNote = (key) => {
-  const keyObj = keyboard[key]
+  const keyData = keyboard[key]
   return (
     lowestNote +
-    keyObj.index +
-    keyObj.row * rowOffset
+    keyData.index +
+    keyData.row * rowOffset
   )
 }
 
@@ -96,16 +95,12 @@ const keyToFrequency = (key) => {
   return midiNoteToFrequency(keyToMidiNote(key))
 }
 
-const DomKeyboard = document.querySelector('.keyboard')
-document.querySelector('.keyboard-container').appendChild(DomKeyboard)
-
 Object.keys(keyboard).forEach(key => {
   const keyboardKey = document.createElement('div')
   keyboardKey.style.gridRowStart = 4 - keyboard[key].row
   keyboardKey.style.gridRowEnd = 4 - keyboard[key].row + 1
   keyboardKey.style.gridColumnStart = keyboard[key].index
   keyboardKey.style.gridColumnEnd = keyboard[key].index + 1
-
   keyboardKey.className = 'keyboard-key'
   keyboardKey.id = key
 
@@ -114,10 +109,10 @@ Object.keys(keyboard).forEach(key => {
   keyboardKeyLabel.innerText = key
 
   keyboardKey.appendChild(keyboardKeyLabel)
-  DomKeyboard.appendChild(keyboardKey)
+  document.querySelector('.keyboard').appendChild(keyboardKey)
 })
 
-var synth = new Tone.MembraneSynth({
+const synth = new Tone.MembraneSynth({
 	"octaves" : 1,
 	"pitchDecay" : 0.1
 }).toMaster()
@@ -147,8 +142,10 @@ sequencer.onfocus = e => {
   Tone.Transport.stop()
 }
 
-sequencer.onblur = e => {
-  const sequence = e.target.value.replace(/\s/g, '')
+const playPauseButton = document.querySelector('.button-play-pause')
+
+playPauseButton.onclick = e => {
+  const sequence = sequencer.value.replace(/\s/g, '')
   Tone.Transport.cancel()
   Tone.Transport.bpm.value = 480
 

@@ -138,3 +138,15 @@ document.body.appendChild(pre)
 // c||cc|c||cc|c|l|
 // z||zz|z||zz|z|;|
 // c||cc|c||cc|c|l|
+
+
+
+// c||f||x||c||5||3||f||r||
+// c||f||x||c||5||3||f||r||
+// c||f||x||c||5||3||f||r||
+// c||f||x||c||5||3||f||r||
+
+// b||g||v||b||0||8||g||y||
+// b||g||v||b||0||8||g||y||
+// b||g||v||b||0||8||g||y||
+// x||g||v||b||6||5||r||s||
