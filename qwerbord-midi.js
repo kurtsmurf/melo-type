@@ -77,6 +77,7 @@ const midiFrequencies = [
 
 let rowOffset = 3
 let lowestNote = 60
+const DEFAULT_BPM = 480
 
 const keyToMidiNote = (key) => {
   const keyData = keyboard[key]
@@ -142,12 +143,41 @@ sequencer.onfocus = e => {
   Tone.Transport.stop()
 }
 
+sequencer.addEventListener('keydown', (e) => {
+  if (e.ctrlKey || e.altKey || e.metaKey || e.shiftKey || sequencer.selectionEnd !== sequencer.selectionStart) { return }
+
+  switch (e.key) {
+    case 'ArrowLeft': 
+      console.log(sequencer.selectionStart);
+      const freq = keyToFrequency(sequencer.value.charAt(sequencer.selectionStart - 1))
+      if (!freq) {return}
+      synth.triggerAttackRelease(
+        freq,
+        '8n');
+      break
+    case 'ArrowRight': synth.triggerAttackRelease(
+      keyToFrequency(sequencer.value.charAt(sequencer.selectionStart)),
+      '8n')
+    }
+  }
+)
+
 const playPauseButton = document.querySelector('.button-play-pause')
 
 playPauseButton.onclick = e => {
-  const sequence = sequencer.value.replace(/\s/g, '')
-  Tone.Transport.cancel()
-  Tone.Transport.bpm.value = 480
+  let text = sequencer.value
+  const match = text.match(/^`(\d+)`/)
+
+  if (match) {
+    console.log(match)
+    Tone.Transport.bpm.value = match[1]
+    text = text.slice(match.index + match[0].length)
+    console.log(text)
+  } else {
+    Tone.Transport.bpm.value = DEFAULT_BPM;
+  }
+
+  const sequence = text.replace(/[^zxcvbnm,\./asdfghjkl;'qwertyuiop\[\]1234567890\-=\\\|]/g, '')
 
   if (sequence === '') { return }
 

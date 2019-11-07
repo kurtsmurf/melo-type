@@ -150,3 +150,16 @@ document.body.appendChild(pre)
 // b||g||v||b||0||8||g||y||
 // b||g||v||b||0||8||g||y||
 // x||g||v||b||6||5||r||s||
+
+
+// `300`
+// n]-n=n-] n]-n=n-] n]-n=n-] n]-n=n-] 
+// zu6z7z6u zu6z7z6u zu6z7z6u zu6z7z6u 
+// vp9v0v9p vp9v0v9p vp9v0v9p vp9v0v9p
+// co8c9c8o co8c9c8o co8c9c8o co8c9c8o 
+
+// `240`
+// n]-n=n-] n]-n=n-] n]-n=n-] n]-n=n-] 
+// zu6z7z6u zu6z7z6u zu6z7z6u zu6z7z6u 
+// vp9v0v9p vp9v0v9p vp9v0v9p vp9v0v9p
+// nkuninuk nkuninuk nkuninuk nkuninuk 
