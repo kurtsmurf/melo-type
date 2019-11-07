@@ -121,17 +121,15 @@ const synth = new Tone.MembraneSynth({
 const sequencer = document.querySelector('.sequencer')
 sequencer.addEventListener('keydown', (e) => {
   const keyObj = keyboard[e.key]
-  if (!keyObj) {return}
-  if (keyObj.active) {return}
-  synth.triggerAttack(keyToFrequency(e.key))
+  if (!keyObj | keyObj.active) {return}
+  synth.triggerAttackRelease(keyToFrequency(e.key), '8n')
   keyObj.active = true
   document.getElementById(e.key).classList.add('active')
 })
 
-sequencer.addEventListener('keyup', (e) => {
+window.addEventListener('keyup', (e) => {
   const keyObj = keyboard[e.key]
   if (!keyObj) {return}
-  synth.triggerRelease()
   keyObj.active = false
   document.getElementById(e.key).classList.remove('active')
 })
@@ -151,13 +149,12 @@ sequencer.addEventListener('keydown', (e) => {
       console.log(sequencer.selectionStart);
       const freq = keyToFrequency(sequencer.value.charAt(sequencer.selectionStart - 1))
       if (!freq) {return}
-      synth.triggerAttackRelease(
-        freq,
-        '8n');
-      break
+      synth.triggerAttackRelease(freq, '8n');
+      return
     case 'ArrowRight': synth.triggerAttackRelease(
       keyToFrequency(sequencer.value.charAt(sequencer.selectionStart)),
       '8n')
+      return
     }
   }
 )
