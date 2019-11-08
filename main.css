@@ -3,6 +3,10 @@
   display: none;
 }
 
+:root {
+  --active-color: fuchsia;
+}
+
 @import url('https://fonts.googleapis.com/css?family=B612+Mono&display=swap');
 
 body {
@@ -22,7 +26,7 @@ h1 {
   border: solid pink;
   height: 12rem;
   outline-width: 1rem;
-  outline-color: pink;
+  outline-color: var(--active-color);
   padding: .5rem;
 }
 
@@ -45,7 +49,6 @@ h1 {
 }
 
 .active {
-  --active-color: fuchsia;
   background: var(--active-color);
   color: white;
   outline: .5rem solid var(--active-color);
