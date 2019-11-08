@@ -16,17 +16,57 @@
   </div>
   <textarea name="sequencer" cols="30"
     rows="10" class="sequencer"
-    placeholder="Enter text to start the sequencer...">
-cfr686rf cfr686rf cfr686rf cfr686rf
-cgyo8oyg cgyo8oyg cgyo8oyg cgyo8oyg
-bjio8oij bjio8oij bjio8oij bjio8oij
-cgyi86yg cgyi86yg cgyi86yg cgyi86yg</textarea>
+    placeholder="✨✨Hello!✨✨
+
+melo-type is a text-based musical sequencer 📄 => 🎼.
+
+=======
+ Intro
+=======
+
+When you type any character from the grid above into this text area, you will hear a musical note. Give it a try!
+
+Once you've written a sequence of notes that you like, hit the play button below to hear them in a loop.
+
+If you want melo-type to rest for a beat anywhere in the sequence, just type backslash '\' or vertical bar '|'.
+
+To change the loop speed, type your desired bpm (beats per minute) inside backticks '`' at the very beginning of the sequence.
+
+e.g.
+  ______________________
+  |`234` blah blah blah
+
+BPM values over 800 will be truncated to keep your browser from catching fire 🔥.
+
+==========
+ Notes 🎶
+==========
+
+The note value of a given key is based on it's position in the keyboard.
+
+Notes get higher as you move upward/to the right, and lower as you move downward/to the left.
+
+To use a bit of musical terminology:
+
+  ➡️ +1 semitone
+  ⬅️ -1 semitone
+  ⬆️ +3 semitones
+  ⬇️ -3 semitones
+
+...but don't worry if that doesn't make sense, just play around!
+
+Check out an example by hitting the 'load an example' link below.
+
+Enjoy!
+
+
+"></textarea>
   <div class="controls">
     <button class="button-play-pause">Play</button>
   </div>
   <p class="note">[ PLAY/PAUSE BUTTON (?) ]</strong>.</p>
-  <p>All whitespace will be ignored.</p>
-  <p>Use the "|" character for a one-beat rest.</p>
+  <p class="note">All whitespace will be ignored.</p>
+  <p class="note">Use the "\" or "|" character for a one-beat rest.</p>
   <p class="note">TODO: Handle <strong>un-supported characters</strong>.</p>
   <p class="note">TODO: Find and kill <strong>zombie loops</strong>.</p>
   <p class="note">TODO: Fix <strong>highlighted keys stuck on</strong> issue</p>

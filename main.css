@@ -3,26 +3,22 @@
   display: none;
 }
 
+@import url('https://fonts.googleapis.com/css?family=B612+Mono|Open+Sans|Roboto&display=swap');
+
 body {
-  font-family: "Open Sans"
-}
-
-@import url('https://fonts.googleapis.com/css?family=B612+Mono&display=swap');
-
-h1 {
-  margin: 0 0 .7rem 0;
   font-family: 'B612 Mono', monospace;
 }
 
-.active {
-  background: pink;
-  color: white;
+h1 {
+  margin: 0 0 .7rem 0;
 }
+
 .sequencer {
   font-size: 2rem;
-  width: 34rem;
+  font-family: 'B612 Mono', monospace;
+  width: 50rem;
   border: solid pink;
-  height: 14rem;
+  height: 30rem;
   outline-width: 0;
 }
 
@@ -42,6 +38,15 @@ h1 {
   justify-content: center;
 }
 
+.active {
+  background: pink;
+  color: white;
+}
+
 .keyboard-key_label {
   font-size: 1.4rem;
+}
+
+footer {
+  margin-top: 5rem;
 }
