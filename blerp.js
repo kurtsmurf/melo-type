@@ -186,3 +186,26 @@ document.body.appendChild(pre)
 // y7\y=\y7\y=\7y=\
 // t7\t-\t7\t-\7t-\
 // y6\y-\y6\y-\6y-\
+
+// `480`
+// h\p\h\\\h\\h\\h\ h\]\h\\\h\\h\\h\
+// h\p\h\\\h\\h\\h\ h\]\h\\\h\\h\\h\
+
+// d\u\d\\\d\\d\\d\ d\i\d\\\d\\d\\d\ 
+// d\u\d\\\d\\d\\d\ d\i\d\\\d\\d\\d\ 
+
+// `300`
+// d\\u\\x\\\u\\\\\
+// d\\u\\x\\\u\\\\\
+// d\\u\\x\\\u\\\\\
+// d\\u\\x\\\u\t\\\
+
+// `400`
+// 4--4--4= 4--4--4= 4--4--4= 4--4--4= 
+// r88r88r9 r88r88r9 r88r88r9 r88r88r9 
+// fiifiifo fiifiifo fiifiifo fiifiifo 
+// vkkvkkvl vkkvkkvl vkkvkkvl vkkvkkvl 
+
+// `300`
+// s\s\y\\s\ss\y\\\
+// s\s\y\\s\ss\y\8y

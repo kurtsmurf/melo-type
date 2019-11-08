@@ -162,14 +162,12 @@ sequencer.addEventListener('keydown', (e) => {
 const playPauseButton = document.querySelector('.button-play-pause')
 
 playPauseButton.onclick = e => {
-  let text = sequencer.value
+  let text = sequencer.value.trim()
   const match = text.match(/^`(\d+)`/)
 
   if (match) {
-    console.log(match)
     Tone.Transport.bpm.value = match[1]
     text = text.slice(match.index + match[0].length)
-    console.log(text)
   } else {
     Tone.Transport.bpm.value = DEFAULT_BPM;
   }
