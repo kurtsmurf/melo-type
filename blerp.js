@@ -209,3 +209,9 @@ document.body.appendChild(pre)
 // `300`
 // s\s\y\\s\ss\y\\\
 // s\s\y\\s\ss\y\8y
+
+
+// CAPITAL LETTERS AND OTHER ALTERNATE "UPPER" CHARACTERS GET IGNORED:
+// ~!@#$%^&*()_+{}|:"<>?
+
+// f\\t\\7\\5\\

@@ -172,13 +172,13 @@ playPauseButton.onclick = e => {
     Tone.Transport.bpm.value = DEFAULT_BPM;
   }
 
-  const sequence = text.replace(/[^zxcvbnm,\./asdfghjkl;'qwertyuiop\[\]1234567890\-=\\\|]/g, '')
+  const sequence = text.replace(/[^zxcvbnm,\./asdfghjkl;'qwertyuiop\[\]1234567890\-=\\]/g, '')
 
   if (sequence === '') { return }
 
   loop = new Tone.Loop(time => {
     sequence.split('').forEach((character, index) => {
-      if (character.match(/[\\|]/)) { return }
+      if (character.match(/\\/)) { return }
 
       const time = `+0:${index}:0`
       synth.triggerAttackRelease(keyToFrequency(character), '4n', time)
