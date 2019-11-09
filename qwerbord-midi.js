@@ -121,7 +121,8 @@ const synth = new Tone.MembraneSynth({
 const sequencer = document.querySelector('.sequencer')
 sequencer.addEventListener('keydown', (e) => {
   const keyObj = keyboard[e.key]
-  if (!keyObj | keyObj.active) {return}
+  if (!keyObj) {return}
+  if (keyObj.active) {return}
   synth.triggerAttackRelease(keyToFrequency(e.key), '8n')
   keyObj.active = true
   document.getElementById(e.key).classList.add('active')

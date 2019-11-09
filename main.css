@@ -14,12 +14,11 @@ body {
 }
 
 h1 {
-  margin: 0 0 .7rem 0;
+  margin: 1rem 0 1.4rem 0;
 }
 
 .sequencer {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 1rem 0 1rem 0;
   font-size: 2rem;
   font-family: 'B612 Mono', monospace;
   width: 50rem;
@@ -57,6 +56,23 @@ h1 {
 
 .keyboard-key_label {
   font-size: 1.4rem;
+}
+
+.button-play-pause {
+  height: 3rem;
+  width: 7rem;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background: fuchsia;
+  border: none;
+  box-shadow: .5rem .5rem 0 0 purple;
+  transition: .1s;
+}
+
+.button-play-pause:active {
+  transform: translate(.5rem, .5rem);
+  box-shadow: 0 0 0 0 purple;
 }
 
 footer {
