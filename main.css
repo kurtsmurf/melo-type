@@ -12,20 +12,30 @@
 body {
   font-family: 'B612 Mono', monospace;
   color: rgb(75, 75, 75);
+  width: 50.25rem;
+  margin: 0 auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  margin-top: 0;
 }
 
 h1 {
-  margin: 1rem 0 1.4rem 0;
+  margin: .5rem 0 .9rem 0;
   color: rgb(54, 54, 54);
 }
 
 .sequencer {
-  margin: 1rem 0 1rem 0;
+  margin: 1.2rem 0 1rem 0;
   font-size: 2rem;
   font-family: 'B612 Mono', monospace;
-  width: 50rem;
-  border: solid pink;
-  height: 12rem;
+  width: 100%;
+  box-sizing: border-box;
+  border: .25rem solid pink;
+  height: 13rem;
   outline-width: 1rem;
   outline-color: var(--active-color);
   padding: .5rem;
@@ -33,27 +43,27 @@ h1 {
 
 .keyboard {
   display: inline-grid;
-  row-gap: 1.25rem;
-  column-gap: 1.25rem;
-  margin-bottom: 1rem;
+  row-gap: .75rem;
+  column-gap: .75rem;
 }
 
 .keyboard-key {
-  width: 3rem;
-  height: 3rem;
-  /* border: dashed pink; */
+  width: 3.5rem;
+  height: 3.5rem;
+  border: .25rem dashed pink;
   display: flex;
   align-items: center;
   justify-content: center;
-  outline: .25rem dashed pink;
-  transition: outline .5s;
+  /* outline: .25rem dashed pink; */
+  transition: border .5s;
+  box-sizing: border-box;
 }
 
 .active {
   background: var(--active-color);
   color: white;
-  outline: .5rem solid var(--active-color);
-  transition: outline 0s;
+  border: .5rem solid var(--active-color);
+  transition: border 0s;
 }
 
 .keyboard-key_label {
@@ -80,6 +90,8 @@ h1 {
   box-shadow: 0 0 0 0 pink;
 }
 
+
 footer {
-  margin-top: 5rem;
+  margin-top: auto;
+  padding: 2rem 0;
 }
