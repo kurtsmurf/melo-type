@@ -24,7 +24,7 @@ main {
 }
 
 h1 {
-  margin: .5rem 0 .9rem 0;
+  margin: .5rem 0;
   color: rgb(54, 54, 54);
 }
 
@@ -62,7 +62,7 @@ h1 {
 .active {
   background: var(--active-color);
   color: white;
-  border: .5rem solid var(--active-color);
+  border: .75rem solid var(--active-color);
   transition: border 0s;
 }
 
