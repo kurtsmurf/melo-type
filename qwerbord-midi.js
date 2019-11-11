@@ -118,7 +118,7 @@ const synth = new Tone.MembraneSynth({
 	"pitchDecay" : 0.1
 }).toMaster()
 
-const sequencer = document.querySelector('.sequencer')
+const sequencerInput = document.querySelector('.sequencer')
 
 const activateVisualKey = (key) => {
   document.getElementById(key).classList.add('active')
@@ -140,7 +140,7 @@ const playKeyNote = (key) => {
   synth.triggerAttackRelease(freq, '8n')
 }
 
-sequencer.addEventListener('keydown', (e) => {
+sequencerInput.addEventListener('keydown', (e) => {
   if (e.ctrlKey || e.altKey || e.metaKey || e.shiftKey) { return }
 
   const keyObj = playableKeys[e.key]
@@ -153,18 +153,18 @@ sequencer.addEventListener('keydown', (e) => {
     return
   }
 
-  if (sequencer.selectionEnd !== sequencer.selectionStart) {return}
+  if (sequencerInput.selectionEnd !== sequencerInput.selectionStart) {return}
 
   switch (e.key) {
     case 'ArrowLeft':
-      key = sequencer.value.charAt(sequencer.selectionStart - 1)
-      if (!playableKeys[key] || sequencer.selectionStart === 0) {return}
+      key = sequencerInput.value.charAt(sequencerInput.selectionStart - 1)
+      if (!playableKeys[key] || sequencerInput.selectionStart === 0) {return}
       playKeyNote(key)
       flashKey(key)
       break
     case 'ArrowRight':
-      key = sequencer.value.charAt(sequencer.selectionStart)
-      if (!playableKeys[key] || sequencer.selectionStart === sequencer.value.length) {return}
+      key = sequencerInput.value.charAt(sequencerInput.selectionStart)
+      if (!playableKeys[key] || sequencerInput.selectionStart === sequencerInput.value.length) {return}
       playKeyNote(key)
       flashKey(key)
       break
@@ -174,32 +174,39 @@ sequencer.addEventListener('keydown', (e) => {
 window.addEventListener('keyup', (e) => {
   const keyObj = playableKeys[e.key]
   if (!keyObj) {return}
-  keyObj.isPressed = false
   deactivateVisualKey(e.key)
+  keyObj.isPressed = false
 })
 
+
 // const startSequencer = () => {
-//   let text = sequencer.value.trim()
+//   let text = sequencerInput.value.trim()
 //   let bpm
 //   const match = text.match(/^`(\d+)`/)
 
 //   if (match) {
-//     bpm = match[1]
 //     text = text.slice(match.index + match[0].length)
+//     bpm = match[1]
 //   } else {
 //     bpm = DEFAULT_BPM;
 //   }
 
+//   // Replace all characters except playable keys and backslash (rest)
 //   const sequence = text.replace(/[^zxcvbnm,\./asdfghjkl;'qwertyuiop\[\]1234567890\-=\\]/g, '')
 
 //   if (sequence === '') { return }
 
-  
+//   // Start the scheduler method running on an interval
+
+// }
+
+// const stopSequencer = () => {
+//   // clear and unset the sequencer interval id
 // }
 
 let loop
 
-sequencer.onfocus = e => {
+sequencerInput.onfocus = e => {
   if (loop) {loop.stop()}
   Tone.Transport.stop()
 }
@@ -207,7 +214,7 @@ sequencer.onfocus = e => {
 const playPauseButton = document.querySelector('.button-play-pause')
 
 playPauseButton.onclick = e => {
-  let text = sequencer.value.trim()
+  let text = sequencerInput.value.trim()
   const match = text.match(/^`(\d+)`/)
 
   if (match) {
@@ -227,7 +234,6 @@ playPauseButton.onclick = e => {
 
       const time = `+0:${index}:0`
       synth.triggerAttackRelease(keyToFrequency(character), '4n', time)
-
       
       Tone.Transport.schedule(() => {
         document.getElementById(character).classList.add('active')
