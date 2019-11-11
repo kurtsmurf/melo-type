@@ -270,3 +270,15 @@ document.body.appendChild(pre)
 // `280`
 // d\\j\\j\ d\\j\\j\
 // d\\j\\j\ d\j\s\g\
+
+// `430`
+// f\\hf\h\f\t\s\e\
+// ff\hf\h\f\t\s\e\
+// f\\hf\h\f\t\s\e\
+// fxthf\h\f\t\s\e\
+
+// `300`
+// vgtyiy tgtesx
+// vgtyiy tgvb\\
+// vgtyiy tpteye
+// tgvbmb vgtv\\
