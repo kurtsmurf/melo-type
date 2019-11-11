@@ -1,49 +1,49 @@
 const keyboard = {
-  "0": { "index": 9, "row": 3, "active": false },
-  "1": { "index": 0, "row": 3, "active": false },
-  "2": { "index": 1, "row": 3, "active": false },
-  "3": { "index": 2, "row": 3, "active": false },
-  "4": { "index": 3, "row": 3, "active": false },
-  "5": { "index": 4, "row": 3, "active": false },
-  "6": { "index": 5, "row": 3, "active": false },
-  "7": { "index": 6, "row": 3, "active": false },
-  "8": { "index": 7, "row": 3, "active": false },
-  "9": { "index": 8, "row": 3, "active": false },
-  "z": { "index": 0, "row": 0, "active": false },
-  "x": { "index": 1, "row": 0, "active": false },
-  "c": { "index": 2, "row": 0, "active": false },
-  "v": { "index": 3, "row": 0, "active": false },
-  "b": { "index": 4, "row": 0, "active": false },
-  "n": { "index": 5, "row": 0, "active": false },
-  "m": { "index": 6, "row": 0, "active": false },
-  ",": { "index": 7, "row": 0, "active": false },
-  ".": { "index": 8, "row": 0, "active": false },
-  "/": { "index": 9, "row": 0, "active": false },
-  "a": { "index": 0, "row": 1, "active": false },
-  "s": { "index": 1, "row": 1, "active": false },
-  "d": { "index": 2, "row": 1, "active": false },
-  "f": { "index": 3, "row": 1, "active": false },
-  "g": { "index": 4, "row": 1, "active": false },
-  "h": { "index": 5, "row": 1, "active": false },
-  "j": { "index": 6, "row": 1, "active": false },
-  "k": { "index": 7, "row": 1, "active": false },
-  "l": { "index": 8, "row": 1, "active": false },
-  ";": { "index": 9, "row": 1, "active": false },
-  "'": { "index": 10, "row": 1, "active": false },
-  "q": { "index": 0, "row": 2, "active": false },
-  "w": { "index": 1, "row": 2, "active": false },
-  "e": { "index": 2, "row": 2, "active": false },
-  "r": { "index": 3, "row": 2, "active": false },
-  "t": { "index": 4, "row": 2, "active": false },
-  "y": { "index": 5, "row": 2, "active": false },
-  "u": { "index": 6, "row": 2, "active": false },
-  "i": { "index": 7, "row": 2, "active": false },
-  "o": { "index": 8, "row": 2, "active": false },
-  "p": { "index": 9, "row": 2, "active": false },
-  "[": { "index": 10, "row": 2, "active": false },
-  "]": { "index": 11, "row": 2, "active": false },
-  "-": { "index": 10, "row": 3, "active": false },
-  "=": { "index": 11, "row": 3, "active": false }
+  "0": { "index": 9, "row": 3, "isPressed": false },
+  "1": { "index": 0, "row": 3, "isPressed": false },
+  "2": { "index": 1, "row": 3, "isPressed": false },
+  "3": { "index": 2, "row": 3, "isPressed": false },
+  "4": { "index": 3, "row": 3, "isPressed": false },
+  "5": { "index": 4, "row": 3, "isPressed": false },
+  "6": { "index": 5, "row": 3, "isPressed": false },
+  "7": { "index": 6, "row": 3, "isPressed": false },
+  "8": { "index": 7, "row": 3, "isPressed": false },
+  "9": { "index": 8, "row": 3, "isPressed": false },
+  "z": { "index": 0, "row": 0, "isPressed": false },
+  "x": { "index": 1, "row": 0, "isPressed": false },
+  "c": { "index": 2, "row": 0, "isPressed": false },
+  "v": { "index": 3, "row": 0, "isPressed": false },
+  "b": { "index": 4, "row": 0, "isPressed": false },
+  "n": { "index": 5, "row": 0, "isPressed": false },
+  "m": { "index": 6, "row": 0, "isPressed": false },
+  ",": { "index": 7, "row": 0, "isPressed": false },
+  ".": { "index": 8, "row": 0, "isPressed": false },
+  "/": { "index": 9, "row": 0, "isPressed": false },
+  "a": { "index": 0, "row": 1, "isPressed": false },
+  "s": { "index": 1, "row": 1, "isPressed": false },
+  "d": { "index": 2, "row": 1, "isPressed": false },
+  "f": { "index": 3, "row": 1, "isPressed": false },
+  "g": { "index": 4, "row": 1, "isPressed": false },
+  "h": { "index": 5, "row": 1, "isPressed": false },
+  "j": { "index": 6, "row": 1, "isPressed": false },
+  "k": { "index": 7, "row": 1, "isPressed": false },
+  "l": { "index": 8, "row": 1, "isPressed": false },
+  ";": { "index": 9, "row": 1, "isPressed": false },
+  "'": { "index": 10, "row": 1, "isPressed": false },
+  "q": { "index": 0, "row": 2, "isPressed": false },
+  "w": { "index": 1, "row": 2, "isPressed": false },
+  "e": { "index": 2, "row": 2, "isPressed": false },
+  "r": { "index": 3, "row": 2, "isPressed": false },
+  "t": { "index": 4, "row": 2, "isPressed": false },
+  "y": { "index": 5, "row": 2, "isPressed": false },
+  "u": { "index": 6, "row": 2, "isPressed": false },
+  "i": { "index": 7, "row": 2, "isPressed": false },
+  "o": { "index": 8, "row": 2, "isPressed": false },
+  "p": { "index": 9, "row": 2, "isPressed": false },
+  "[": { "index": 10, "row": 2, "isPressed": false },
+  "]": { "index": 11, "row": 2, "isPressed": false },
+  "-": { "index": 10, "row": 3, "isPressed": false },
+  "=": { "index": 11, "row": 3, "isPressed": false }
 }
 
 const midiFrequencies = [
@@ -76,13 +76,18 @@ const midiFrequencies = [
 ]
 
 let rowOffset = 3
-let lowestNote = 60
+let keyboardOffset = 60
 const DEFAULT_BPM = 480
+const playableKeys = Object.keys(keyboard)
+
+const isPlayableKey = (key) => {
+  return playableKeys.includes(key)
+}
 
 const keyToMidiNote = (key) => {
   const keyData = keyboard[key]
   return (
-    lowestNote +
+    keyboardOffset +
     keyData.index +
     keyData.row * rowOffset
   )
@@ -96,7 +101,7 @@ const keyToFrequency = (key) => {
   return midiNoteToFrequency(keyToMidiNote(key))
 }
 
-Object.keys(keyboard).forEach(key => {
+playableKeys.forEach(key => {
   const keyboardKey = document.createElement('div')
   keyboardKey.style.gridRowStart = 4 - keyboard[key].row
   keyboardKey.style.gridRowEnd = 4 - keyboard[key].row + 1
@@ -122,20 +127,69 @@ const sequencer = document.querySelector('.sequencer')
 
 sequencer.addEventListener('keydown', (e) => {
   if (e.ctrlKey || e.metaKey) {return}
+  if (!isPlayableKey(e.key)) {return}
+
   const keyObj = keyboard[e.key]
-  if (!keyObj) {return}
-  if (keyObj.active) {return}
+  if (keyObj.isPressed) {return}
+
   synth.triggerAttackRelease(keyToFrequency(e.key), '8n')
-  keyObj.active = true
+  keyObj.isPressed = true
   document.getElementById(e.key).classList.add('active')
 })
 
 window.addEventListener('keyup', (e) => {
   const keyObj = keyboard[e.key]
   if (!keyObj) {return}
-  keyObj.active = false
+  keyObj.isPressed = false
   document.getElementById(e.key).classList.remove('active')
 })
+
+const flashKey = (key) => {
+  document.getElementById(key).classList.add('active')
+  setTimeout(() => {
+    document.getElementById(key).classList.remove('active')
+  }, 120)
+}
+
+sequencer.addEventListener('keydown', (e) => {
+  if (e.ctrlKey || e.altKey || e.metaKey || e.shiftKey || sequencer.selectionEnd !== sequencer.selectionStart) { return }
+
+  let freq
+  switch (e.key) {
+    case 'ArrowLeft': 
+      key = sequencer.value.charAt(sequencer.selectionStart - 1)
+      freq = keyToFrequency(key)
+      synth.triggerAttackRelease(freq, '8n');
+      flashKey(key)
+      break
+    case 'ArrowRight':
+      key = sequencer.value.charAt(sequencer.selectionStart)
+      freq = keyToFrequency(key)
+      synth.triggerAttackRelease(freq, '8n')
+      flashKey(key)
+      break
+  }
+  
+})
+
+// const startSequencer = () => {
+//   let text = sequencer.value.trim()
+//   let bpm
+//   const match = text.match(/^`(\d+)`/)
+
+//   if (match) {
+//     bpm = match[1]
+//     text = text.slice(match.index + match[0].length)
+//   } else {
+//     bpm = DEFAULT_BPM;
+//   }
+
+//   const sequence = text.replace(/[^zxcvbnm,\./asdfghjkl;'qwertyuiop\[\]1234567890\-=\\]/g, '')
+
+//   if (sequence === '') { return }
+
+  
+// }
 
 let loop
 
@@ -143,24 +197,6 @@ sequencer.onfocus = e => {
   if (loop) {loop.stop()}
   Tone.Transport.stop()
 }
-
-sequencer.addEventListener('keydown', (e) => {
-  if (e.ctrlKey || e.altKey || e.metaKey || e.shiftKey || sequencer.selectionEnd !== sequencer.selectionStart) { return }
-
-  switch (e.key) {
-    case 'ArrowLeft': 
-      console.log(sequencer.selectionStart);
-      const freq = keyToFrequency(sequencer.value.charAt(sequencer.selectionStart - 1))
-      if (!freq) {return}
-      synth.triggerAttackRelease(freq, '8n');
-      return
-    case 'ArrowRight': synth.triggerAttackRelease(
-      keyToFrequency(sequencer.value.charAt(sequencer.selectionStart)),
-      '8n')
-      return
-    }
-  }
-)
 
 const playPauseButton = document.querySelector('.button-play-pause')
 
@@ -186,6 +222,7 @@ playPauseButton.onclick = e => {
       const time = `+0:${index}:0`
       synth.triggerAttackRelease(keyToFrequency(character), '4n', time)
 
+      
       Tone.Transport.schedule(() => {
         document.getElementById(character).classList.add('active')
       }, time)
