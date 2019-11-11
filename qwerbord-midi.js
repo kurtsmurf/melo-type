@@ -1,4 +1,4 @@
-const keyboard = {
+const playableKeys = {
   "0": { "index": 9, "row": 3, "isPressed": false },
   "1": { "index": 0, "row": 3, "isPressed": false },
   "2": { "index": 1, "row": 3, "isPressed": false },
@@ -78,14 +78,9 @@ const midiFrequencies = [
 let rowOffset = 3
 let keyboardOffset = 60
 const DEFAULT_BPM = 480
-const playableKeys = Object.keys(keyboard)
-
-const isPlayableKey = (key) => {
-  return playableKeys.includes(key)
-}
 
 const keyToMidiNote = (key) => {
-  const keyData = keyboard[key]
+  const keyData = playableKeys[key]
   return (
     keyboardOffset +
     keyData.index +
@@ -101,12 +96,12 @@ const keyToFrequency = (key) => {
   return midiNoteToFrequency(keyToMidiNote(key))
 }
 
-playableKeys.forEach(key => {
+Object.keys(playableKeys).forEach(key => {
   const keyboardKey = document.createElement('div')
-  keyboardKey.style.gridRowStart = 4 - keyboard[key].row
-  keyboardKey.style.gridRowEnd = 4 - keyboard[key].row + 1
-  keyboardKey.style.gridColumnStart = keyboard[key].index
-  keyboardKey.style.gridColumnEnd = keyboard[key].index + 1
+  keyboardKey.style.gridRowStart = 4 - playableKeys[key].row
+  keyboardKey.style.gridRowEnd = 4 - playableKeys[key].row + 1
+  keyboardKey.style.gridColumnStart = playableKeys[key].index
+  keyboardKey.style.gridColumnEnd = playableKeys[key].index + 1
   keyboardKey.className = 'keyboard-key'
   keyboardKey.id = key
 
@@ -125,49 +120,62 @@ const synth = new Tone.MembraneSynth({
 
 const sequencer = document.querySelector('.sequencer')
 
-const flashKey = (key) => {
+const activateVisualKey = (key) => {
   document.getElementById(key).classList.add('active')
+}
+
+const deactivateVisualKey = (key) => {
+  document.getElementById(key).classList.remove('active')
+}
+
+const flashKey = (key) => {
+  activateVisualKey(key)
   setTimeout(() => {
-    document.getElementById(key).classList.remove('active')
+    deactivateVisualKey(key)
   }, 120)
+}
+
+const playKeyNote = (key) => {
+  freq = keyToFrequency(key)
+  synth.triggerAttackRelease(freq, '8n')
 }
 
 sequencer.addEventListener('keydown', (e) => {
   if (e.ctrlKey || e.altKey || e.metaKey || e.shiftKey) { return }
 
-  if (isPlayableKey(e.key)) {
-    const keyObj = keyboard[e.key]
-    if (keyObj.isPressed) {return}  
-    synth.triggerAttackRelease(keyToFrequency(e.key), '8n')
+  const keyObj = playableKeys[e.key]
+
+  if (keyObj) {
+    if (keyObj.isPressed) {return} 
+    playKeyNote(e.key)
+    activateVisualKey(e.key)
     keyObj.isPressed = true
-    document.getElementById(e.key).classList.add('active')
     return
   }
 
-  let freq
+  if (sequencer.selectionEnd !== sequencer.selectionStart) {return}
+
   switch (e.key) {
     case 'ArrowLeft':
-      if (sequencer.selectionEnd !== sequencer.selectionStart) {return}
       key = sequencer.value.charAt(sequencer.selectionStart - 1)
-      freq = keyToFrequency(key)
-      synth.triggerAttackRelease(freq, '8n');
+      if (!playableKeys[key] || sequencer.selectionStart === 0) {return}
+      playKeyNote(key)
       flashKey(key)
       break
     case 'ArrowRight':
-      if (sequencer.selectionEnd !== sequencer.selectionStart) {return}
       key = sequencer.value.charAt(sequencer.selectionStart)
-      freq = keyToFrequency(key)
-      synth.triggerAttackRelease(freq, '8n')
+      if (!playableKeys[key] || sequencer.selectionStart === sequencer.value.length) {return}
+      playKeyNote(key)
       flashKey(key)
       break
   }
 })
 
 window.addEventListener('keyup', (e) => {
-  const keyObj = keyboard[e.key]
+  const keyObj = playableKeys[e.key]
   if (!keyObj) {return}
   keyObj.isPressed = false
-  document.getElementById(e.key).classList.remove('active')
+  deactivateVisualKey(e.key)
 })
 
 // const startSequencer = () => {
