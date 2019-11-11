@@ -119,7 +119,9 @@ const synth = new Tone.MembraneSynth({
 }).toMaster()
 
 const sequencer = document.querySelector('.sequencer')
+
 sequencer.addEventListener('keydown', (e) => {
+  if (e.ctrlKey || e.metaKey) {return}
   const keyObj = keyboard[e.key]
   if (!keyObj) {return}
   if (keyObj.active) {return}
