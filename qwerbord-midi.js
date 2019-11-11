@@ -125,25 +125,6 @@ const synth = new Tone.MembraneSynth({
 
 const sequencer = document.querySelector('.sequencer')
 
-sequencer.addEventListener('keydown', (e) => {
-  if (e.ctrlKey || e.metaKey) {return}
-  if (!isPlayableKey(e.key)) {return}
-
-  const keyObj = keyboard[e.key]
-  if (keyObj.isPressed) {return}
-
-  synth.triggerAttackRelease(keyToFrequency(e.key), '8n')
-  keyObj.isPressed = true
-  document.getElementById(e.key).classList.add('active')
-})
-
-window.addEventListener('keyup', (e) => {
-  const keyObj = keyboard[e.key]
-  if (!keyObj) {return}
-  keyObj.isPressed = false
-  document.getElementById(e.key).classList.remove('active')
-})
-
 const flashKey = (key) => {
   document.getElementById(key).classList.add('active')
   setTimeout(() => {
@@ -152,24 +133,41 @@ const flashKey = (key) => {
 }
 
 sequencer.addEventListener('keydown', (e) => {
-  if (e.ctrlKey || e.altKey || e.metaKey || e.shiftKey || sequencer.selectionEnd !== sequencer.selectionStart) { return }
+  if (e.ctrlKey || e.altKey || e.metaKey || e.shiftKey) { return }
+
+  if (isPlayableKey(e.key)) {
+    const keyObj = keyboard[e.key]
+    if (keyObj.isPressed) {return}  
+    synth.triggerAttackRelease(keyToFrequency(e.key), '8n')
+    keyObj.isPressed = true
+    document.getElementById(e.key).classList.add('active')
+    return
+  }
 
   let freq
   switch (e.key) {
-    case 'ArrowLeft': 
+    case 'ArrowLeft':
+      if (sequencer.selectionEnd !== sequencer.selectionStart) {return}
       key = sequencer.value.charAt(sequencer.selectionStart - 1)
       freq = keyToFrequency(key)
       synth.triggerAttackRelease(freq, '8n');
       flashKey(key)
       break
     case 'ArrowRight':
+      if (sequencer.selectionEnd !== sequencer.selectionStart) {return}
       key = sequencer.value.charAt(sequencer.selectionStart)
       freq = keyToFrequency(key)
       synth.triggerAttackRelease(freq, '8n')
       flashKey(key)
       break
   }
-  
+})
+
+window.addEventListener('keyup', (e) => {
+  const keyObj = keyboard[e.key]
+  if (!keyObj) {return}
+  keyObj.isPressed = false
+  document.getElementById(e.key).classList.remove('active')
 })
 
 // const startSequencer = () => {
