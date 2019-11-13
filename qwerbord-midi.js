@@ -178,73 +178,78 @@ window.addEventListener('keyup', (e) => {
   keyObj.isPressed = false
 })
 
+let sequencerId
 
-// const startSequencer = () => {
-//   let text = sequencerInput.value.trim()
-//   let bpm
-//   const match = text.match(/^`(\d+)`/)
+const startSequencer = () => {
+  let text = sequencerInput.value.trim()
+  let bpm
+  const metadata = text.match(/^`(\d+)`/)
 
-//   if (match) {
-//     text = text.slice(match.index + match[0].length)
-//     bpm = match[1]
-//   } else {
-//     bpm = DEFAULT_BPM;
-//   }
+  if (metadata) {
+    text = text.slice(metadata.index + metadata[0].length)
+    bpm = metadata[1]
+  } else {
+    bpm = DEFAULT_BPM;
+  }
 
-//   // Replace all characters except playable keys and backslash (rest)
-//   const sequence = text.replace(/[^zxcvbnm,\./asdfghjkl;'qwertyuiop\[\]1234567890\-=\\]/g, '')
+  // Replace all characters except playable keys and backslash (rest)
+  const cleanText = text.replace(/[^zxcvbnm,\./asdfghjkl;'qwertyuiop\[\]1234567890\-=\\]/g, '')
+  if (cleanText === '') { return }
 
-//   if (sequence === '') { return }
+  const schedulerInterval = .5
+  const sequence = cleanText.split('')
+  const lookAhead = 1.2 * schedulerInterval
+  const stepLength = 60 / bpm
+  let step = 0
+  let nextNoteTime
 
-//   // Start the scheduler method running on an interval
+  const scheduler = () => {
+    windowOpen = Tone.context.currentTime
+    windowClose = windowOpen + lookAhead
+    if (!nextNoteTime) nextNoteTime = windowOpen
 
-// }
+    while (nextNoteTime < windowClose) {
+      // schedule synth play note
+      const key = sequence[step]
+      synth.triggerAttackRelease(keyToFrequency(key), stepLength / 2, nextNoteTime)
 
-// const stopSequencer = () => {
-//   // clear and unset the sequencer interval id
-// }
+      // schedule activate visual key
+      waitKeyOn = (nextNoteTime - Tone.context.currentTime) * 1000
+      console.log(waitKeyOn)
 
-let loop
+      setTimeout(activateVisualKey(key), waitKeyOn)
+
+      // schedule deactivate visual key
+      waitKeyOff = waitKeyOn + stepLength
+      // setTimeout(deactivateVisualKey(key), waitKeyOff)
+
+      // augment nextNoteTime by step length
+      nextNoteTime += stepLength
+
+      // augment step by one, wrap to zero if equals than sequence length
+      if (++step === sequence.length) step = 0
+    }
+  }
+
+  return setInterval(scheduler, schedulerInterval * 1000)
+}
+
+const stopSequencer = () => {
+  clearInterval(sequencerId)
+  sequencerId = null
+}
 
 sequencerInput.onfocus = e => {
-  if (loop) {loop.stop()}
-  Tone.Transport.stop()
+  if (sequencerId) stopSequencer()
 }
 
 const playPauseButton = document.querySelector('.button-play-pause')
-
 playPauseButton.onclick = e => {
-  let text = sequencerInput.value.trim()
-  const match = text.match(/^`(\d+)`/)
-
-  if (match) {
-    Tone.Transport.bpm.value = match[1]
-    text = text.slice(match.index + match[0].length)
+  if (sequencerId) {
+    stopSequencer()
+    // set text to 'pause'
   } else {
-    Tone.Transport.bpm.value = DEFAULT_BPM;
+    sequencerId = startSequencer()
+    // set text to 'play'
   }
-
-  const sequence = text.replace(/[^zxcvbnm,\./asdfghjkl;'qwertyuiop\[\]1234567890\-=\\]/g, '')
-
-  if (sequence === '') { return }
-
-  loop = new Tone.Loop(time => {
-    sequence.split('').forEach((character, index) => {
-      if (character.match(/\\/)) { return }
-
-      const time = `+0:${index}:0`
-      synth.triggerAttackRelease(keyToFrequency(character), '4n', time)
-      
-      Tone.Transport.schedule(() => {
-        document.getElementById(character).classList.add('active')
-      }, time)
-
-      Tone.Transport.schedule(() => {
-        document.getElementById(character).classList.remove('active')
-      }, `+0:${index + 1}:0`)
-    })
-  }, `0:${sequence.length}:0`)
-
-  loop.start()
-  Tone.Transport.start()
 }
