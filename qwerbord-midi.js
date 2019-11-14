@@ -233,11 +233,13 @@ const startSequencer = () => {
   }
 
   sequencerId =  setInterval(scheduler, schedulerInterval * 1000)
+  playPauseButton.innerText = 'Stop' // '⏹'
 }
 
 const stopSequencer = () => {
   clearInterval(sequencerId)
   sequencerId = null
+  playPauseButton.innerText = 'Play' // '⏵'
 }
 
 sequencerInput.onfocus = e => {
@@ -245,12 +247,11 @@ sequencerInput.onfocus = e => {
 }
 
 const playPauseButton = document.querySelector('.button-play-pause')
+
 playPauseButton.onclick = e => {
   if (sequencerId) {
     stopSequencer()
-    // set text to 'pause'
   } else {
     startSequencer()
-    // set text to 'play'
   }
 }
