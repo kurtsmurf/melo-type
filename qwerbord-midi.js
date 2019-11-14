@@ -183,10 +183,12 @@ let sequencerId
 const startSequencer = () => {
   let text = sequencerInput.value.trim()
   let bpm
-  const metadata = text.match(/^`(\d+)`/)
+  const metadata = text.match(/`(\d+)`/)
 
   if (metadata) {
-    text = text.slice(metadata.index + metadata[0].length)
+    left = text.slice(0, metadata.index)
+    right = text.slice(metadata.index + metadata[0].length)
+    text = left + right
     bpm = metadata[1]
   } else {
     bpm = DEFAULT_BPM;
@@ -211,27 +213,26 @@ const startSequencer = () => {
     while (nextNoteTime < windowClose) {
       // schedule synth play note
       const key = sequence[step]
-      synth.triggerAttackRelease(keyToFrequency(key), stepLength / 2, nextNoteTime)
-
-      // schedule activate visual key
-      waitKeyOn = (nextNoteTime - Tone.context.currentTime) * 1000
-      console.log(waitKeyOn)
-
-      setTimeout(activateVisualKey(key), waitKeyOn)
-
-      // schedule deactivate visual key
-      waitKeyOff = waitKeyOn + stepLength
-      // setTimeout(deactivateVisualKey(key), waitKeyOff)
+      if (playableKeys[key]) {
+        // Schedule note
+        synth.triggerAttackRelease(keyToFrequency(key), stepLength / 2, nextNoteTime)
+        
+        // Schedule flash key
+        setTimeout(
+          () => flashKey(key),
+          (nextNoteTime - Tone.context.currentTime) * 1000
+        )
+      }
 
       // augment nextNoteTime by step length
       nextNoteTime += stepLength
 
-      // augment step by one, wrap to zero if equals than sequence length
+      // augment step by one, wrap to zero if step equals sequence length
       if (++step === sequence.length) step = 0
     }
   }
 
-  return setInterval(scheduler, schedulerInterval * 1000)
+  sequencerId =  setInterval(scheduler, schedulerInterval * 1000)
 }
 
 const stopSequencer = () => {
@@ -249,7 +250,7 @@ playPauseButton.onclick = e => {
     stopSequencer()
     // set text to 'pause'
   } else {
-    sequencerId = startSequencer()
+    startSequencer()
     // set text to 'play'
   }
 }
