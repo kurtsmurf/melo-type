@@ -1,43 +1,38 @@
-.note {
-  color: red;
-  display: none;
-}
-
 :root {
-  --active-color: rgb(204, 107, 204);
+  --accent-color: rgb(204, 107, 204);
 }
-
-@import url('https://fonts.googleapis.com/css?family=B612+Mono&display=swap');
 
 body {
-  font-family: 'B612 Mono', monospace;
+  font-family: monospace;
   color: rgb(75, 75, 75);
   width: 50.25rem;
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-main {
-  margin-top: 0;
+h1 {
+  margin: 1rem 0;
+  color: rgb(54, 54, 54);
 }
 
-h1 {
-  margin: .5rem 0;
-  color: rgb(54, 54, 54);
+main {
+  flex-grow: 2;
+  flex-direction: column;
+  display: flex;
 }
 
 .sequencer {
   margin: 1.2rem 0 1rem 0;
   font-size: 2rem;
-  font-family: 'B612 Mono', monospace;
+  font-family: monospace;
   width: 100%;
+  flex-grow: 2;
   box-sizing: border-box;
   border: .25rem solid pink;
-  height: 13rem;
-  outline-width: 1rem;
-  outline-color: var(--active-color);
+  /* outline-width: 1rem;
+  outline-color: var(--accent-color); */
   padding: .5rem;
 }
 
@@ -54,15 +49,14 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* outline: .25rem dashed pink; */
   transition: border .5s;
   box-sizing: border-box;
 }
 
 .active {
-  background: var(--active-color);
+  background: var(--accent-color);
   color: white;
-  border: .75rem solid var(--active-color);
+  border: .75rem solid var(--accent-color);
   transition: border 0s;
 }
 
@@ -76,11 +70,11 @@ h1 {
   color: white;
   font-size: 1.4rem;
   font-weight: bold;
-  background: var(--active-color);
+  background: var(--accent-color);
   border: none;
   box-shadow: .5rem .5rem .00rem 0 rgb(243, 206, 212);
   transition: .1s;
-  font-family: 'B612 Mono', monospace;
+  font-family: monospace;
   text-shadow:
     .1rem .1rem .4rem rgb(165, 89, 165);
 }
@@ -89,7 +83,6 @@ h1 {
   transform: translate(.5rem, .5rem);
   box-shadow: 0 0 0 0 pink;
 }
-
 
 footer {
   margin-top: auto;

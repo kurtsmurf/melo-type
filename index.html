@@ -11,33 +11,14 @@
 <body>
   <main>
     <h1>melo-type</h1>
-    <div class="keyboard-container">
-      <div class="keyboard">
-      </div>
-    </div>
-    <textarea name="sequencer" cols="30"
-      rows="10" class="sequencer"
+    <div class="keyboard"></div>
+    <textarea name="sequencer" 
+      class="sequencer"
       placeholder="✨✨Hello!✨✨
   
 melo-type is a text-based melodic step sequencer 📄➡🎼.
 
--- Overview --
-
-When you type any character from the grid above into this text area, you will hear a musical note. Give it a try!
-
-Once you've written a sequence of notes that you like, hit the play button to hear them in a loop.
-
-If you want melo-type to rest for a beat anywhere in the sequence, just type backslash '\'.
-
-To change the loop speed, type your desired bpm (beats per minute) inside backticks '`' at the very beginning of the sequence.
-
-e.g.
-  ______________________
-  |`234` blah blah blah
-
-Bpm values over 800 will be truncated to keep your browser from catching fire 🔥.
-
--- Keyboard Layout --
+When you type any character from the above grid into this text area, you will hear a musical note. Give it a try!
 
 The note value of each key is based on it's position in the keyboard.
 
@@ -52,30 +33,24 @@ To use a bit of musical terminology:
 
 ...but don't worry if that doesn't make sense, just play around!
 
-Or check out an example by hitting the 'load an example' link below.
+Once you've written a sequence of notes that you like, hit the play button to hear them in a loop.
+
+If you want melo-type to rest for a beat anywhere in the sequence, just type backslash '\'.
+
+To set the playback speed of the loop, type your desired bpm (beats per minute) inside backticks '`' anywhere in the sequence (only the last bpm value will be observed).
+
+e.g. `234` blah blah blah
 
 Enjoy!
 
-
-  "></textarea>
+"></textarea>
     <div class="controls">
       <button class="button-play-pause">Play</button>
     </div>
-    <p class="note">[ PLAY/PAUSE BUTTON (?) ]</strong>.</p>
-    <p class="note">All whitespace will be ignored.</p>
-    <p class="note">Use the "\" or "|" character for a one-beat rest.</p>
-    <p class="note">TODO: Handle <strong>un-supported characters</strong>.</p>
-    <p class="note">TODO: Find and kill <strong>zombie loops</strong>.</p>
-    <p class="note">TODO: Fix <strong>highlighted keys stuck on</strong> issue</p>
-    <p class="note">TODO: Fix <strong>loops stopping on their own</strong> issue</p>
-    <p class="note">TODO: Fix <strong>glitch on loop restart</strong> issue</p>
   </main>
   <footer>
     <div>
-      Made by <a href="https://github.com/kurtsmurf">Chris Smith</a>
-    </div>
-    <div>
-      Basically a melodic knock-off of the excellent ✨<a href="http://typedrummer.com/">typedrummer</a>✨
+      Made by <a href="https://github.com/kurtsmurf">Chris Smith</a> inspired by the excellent ✨<a href="http://typedrummer.com/">typedrummer</a>✨
     </div>
   </footer></body>
 </html>
