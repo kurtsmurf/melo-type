@@ -24,6 +24,7 @@ main {
 }
 
 .sequencer {
+  resize: none;
   margin: 1.2rem 0 1rem 0;
   font-size: 2rem;
   font-family: inherit;
