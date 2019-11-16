@@ -26,7 +26,7 @@ main {
 .sequencer {
   margin: 1.2rem 0 1rem 0;
   font-size: 2rem;
-  font-family: monospace;
+  font-family: inherit;
   width: 100%;
   flex-grow: 2;
   box-sizing: border-box;
@@ -64,9 +64,10 @@ main {
   font-size: 1.4rem;
 }
 
-.button-play-pause {
+.button-play-pause,
+.button-demo {
   height: 3rem;
-  width: 7rem;
+  padding: 0 2rem;
   color: white;
   font-size: 1.4rem;
   font-weight: bold;
@@ -74,14 +75,21 @@ main {
   border: none;
   box-shadow: .5rem .5rem .00rem 0 rgb(243, 206, 212);
   transition: .1s;
-  font-family: monospace;
+  font-family: inherit;
   text-shadow:
-    .1rem .1rem .4rem rgb(165, 89, 165);
+    .1rem .1rem .4rem rgb(3,3,3, 0.3);
 }
 
-.button-play-pause:active {
+.button-play-pause:active,
+.button-demo:active {
   transform: translate(.5rem, .5rem);
-  box-shadow: 0 0 0 0 pink;
+  box-shadow: 0 0 0 0;
+}
+
+.button-demo {
+  margin-left: 1rem;
+  background: rgb(43, 168, 168);
+  box-shadow: .5rem .5rem .00rem 0 rgb(177, 216, 216);
 }
 
 footer {
