@@ -184,23 +184,16 @@ document.body.appendChild(pre)
 // cgycgygc
 // vfyvfyfv
 
+// #############################################################
+
+
+// `400`
 // u7\u-\u7\u-\7u-\
 // y7\y=\y7\y=\7y=\
 // t7\t-\t7\t-\7t-\
 // y6\y-\y6\y-\6y-\
 
-// `480`
-// h\p\h\\\h\\h\\h\ h\]\h\\\h\\h\\h\
-// h\p\h\\\h\\h\\h\ h\]\h\\\h\\h\\h\
-
-// d\u\d\\\d\\d\\d\ d\i\d\\\d\\d\\d\ 
-// d\u\d\\\d\\d\\d\ d\i\d\\\d\\d\\d\ 
-
-// `300`
-// d\\u\\x\\\u\\\\\
-// d\\u\\x\\\u\\\\\
-// d\\u\\x\\\u\\\\\
-// d\\u\\x\\\u\t\\\
+// d\\u\\x\\\u\\t\\d\\u\\x\\\u\trd\d\\u\\x\\\u\\t\\a\\t\\c\\\t\\u\\
 
 // `400`
 // 4--4--4= 4--4--4= 4--4--4= 4--4--4= 
@@ -213,20 +206,9 @@ document.body.appendChild(pre)
 // s\s\y\\s\ss\y\8y
 
 
-// CAPITAL LETTERS AND OTHER ALTERNATE "UPPER" CHARACTERS GET IGNORED:
+// CAPITAL LETTERS AND OTHER "UPPER" CHARACTERS GET IGNORED:
 // ~!@#$%^&*()_+{}|:"<>?
-
 // f\\t\\7\\5\\
-
-// `360`
-// a\\d\\g\\\t\g\t\
-// u\\o\\u\\\t\g\t\
-// a\\d\\g\\\t\g\t\
-// u\\o\\u\\\t\7\\\
-// a\\d\\g\\\t\g\t\
-// u\\o\\u\\\t\g\t\
-// a\\d\\g\\\t\g\t\
-// u\\o\\u\\\t\77\7
 
 // `400`
 // v\\d\\g\\\t\g\t\u\\6\\u\\\t\g\t\
@@ -244,32 +226,29 @@ document.body.appendChild(pre)
 // fy7\00\7\y\f\y78 \5\t\5\y\y\yy\\\ 
 
 
-/* `340`vzvhhhvhkui97vhu7=-9nhi9797u7vhu7g7999uhu7uthdasfhtuvhkuhu97vgu7uhtucnhkxvghzxdhvu */
+// `300` 🏞️🏞️🏞️🏞️
+// hhhvhkui97vhu7=-
+// 9nhi9797u7vhu7g7
+// 999uhu7uthdasfht
+// uvhkuhu97vgu7uht
+// ucnhkxvghzvghvug
 
-// `440`
+// `700`
 // 🖖✨🌌
 // d\\\\\7\\\\\\\\6\\4\t\r\
 // e\\\\\\\\\\\\\\\\\f\\\\\
 // d\\\\\9\\\\\\\\7\\6\4\t\
-// r\\\\\\\\\\\\\\\\\\\\e\\
+// r\\\\\\\\\\\\\\\\\e\\\\\
 // g\\\\\\\\r\\t\\u\\6\7\6\
 // 9\\\\\\\\\\\=\\\\\\\\-\\
 // 9\\\\\g\\\\\\\\\\\u\\\\\
 // t\\\\\\\\\\\\\\\\\\\\\\\ 
 
-// b\\\\\\\y\\\\\\\ g\\\\\\\u\\\\\\\
-// g\\\\\\\6\\\\\\\ f\\\\\\\7\\\\\\\
-
-// `240`
-// nhuhiuth vhu78ugb nhuhiuth vhuhthgh
+// bygug6f7 `90`
 
 // `300`
 // vngvuvgt vngvuvgt vngvuvgt vngvuvgt
 // zcszoswu zcszoswu zcszoswu zcszoswu
-
-// `280`
-// d\\j\\j\ d\\j\\j\
-// d\\j\\j\ d\j\s\g\
 
 // `430`
 // f\\hf\h\f\t\s\e\

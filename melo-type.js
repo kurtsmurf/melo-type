@@ -233,13 +233,13 @@ const startSequencer = () => {
   }
 
   sequencerId =  setInterval(scheduler, schedulerInterval * 1000)
-  playPauseButton.innerText = 'Stop' // '⏹'
+  playPauseButton.innerText = 'Stop'
 }
 
 const stopSequencer = () => {
   clearInterval(sequencerId)
   sequencerId = null
-  playPauseButton.innerText = 'Play' // '⏵'
+  playPauseButton.innerText = 'Play'
 }
 
 sequencerInput.onfocus = e => {
@@ -256,7 +256,16 @@ playPauseButton.onclick = e => {
   }
 }
 
-demoButton = document.querySelector('.button-demo')
+const demoButton = document.querySelector('.button-demo')
+let demoIndex = demos.length - 1
+
 demoButton.onclick = () => {
-  sequencerInput.value = demos[0]
+  stopSequencer()
+  const currentSong = sequencerInput.value
+  if (currentSong.trim() !== "" && currentSong !== demos[demoIndex]) {
+    const confirmed = confirm("Loading a demo will overwrite the current text. Continue?")
+    if (!confirmed) return
+  }
+  if (++demoIndex == demos.length) demoIndex = 0
+  sequencerInput.value = demos[demoIndex]
 }
