@@ -24,16 +24,14 @@ main {
 }
 
 .sequencer {
-  resize: none;
+  resize: vertical;
   margin: 1.2rem 0 1rem 0;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-family: inherit;
   width: 100%;
   flex-grow: 2;
   box-sizing: border-box;
-  border: .25rem solid pink;
-  /* outline-width: 1rem;
-  outline-color: var(--accent-color); */
+  border: .5rem solid pink;
   padding: .5rem;
 }
 

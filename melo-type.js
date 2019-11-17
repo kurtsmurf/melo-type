@@ -255,3 +255,8 @@ playPauseButton.onclick = e => {
     startSequencer()
   }
 }
+
+demoButton = document.querySelector('.button-demo')
+demoButton.onclick = () => {
+  sequencerInput.value = demos[0]
+}
