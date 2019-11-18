@@ -117,7 +117,7 @@ const synth = new Tone.MembraneSynth({
 	"octaves" : 1,
   "pitchDecay" : 0.1,
   "envelope" : {
-    "attack" : 0.02 ,
+    "attack" : 0.007 ,
     "decay" : 0.4 ,
     "sustain" : 0.01 ,
     "release" : 1.4 ,
