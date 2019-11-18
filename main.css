@@ -13,7 +13,8 @@ body {
 }
 
 h1 {
-  margin: 1rem 0;
+  font-size: 1.6rem;
+  margin: .4rem 0;
   color: rgb(54, 54, 54);
 }
 
@@ -25,7 +26,7 @@ main {
 
 .sequencer {
   resize: vertical;
-  margin: 1.2rem 0 1rem 0;
+  margin: 1.2rem 0;
   font-size: 1.6rem;
   font-family: inherit;
   width: 100%;
