@@ -34,7 +34,13 @@ y6\\y-\\y6\\y-\\6y-\\`,
 
 `slslslsl s;s;s;s; a;a;a;a; alalalal clclclcl cjcjcjcj xjxjxjxj xgxgxgxg zgzgzgzg zfzfzfzf vfvfvfvf vjvjvjvj
 
-\`190\``
+\`190\``,
+
+`C MAJOR SCALE THREE WAYS:
+
+zcsdwr34 zcbdgjyu zcbn,/l;
+
+\`240\``
 ]
 
 /**
