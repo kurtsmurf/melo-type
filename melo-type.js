@@ -115,7 +115,14 @@ Object.keys(playableKeys).forEach(key => {
 
 const synth = new Tone.MembraneSynth({
 	"octaves" : 1,
-	"pitchDecay" : 0.1
+  "pitchDecay" : 0.1,
+  "envelope" : {
+    "attack" : 0.02 ,
+    "decay" : 0.4 ,
+    "sustain" : 0.01 ,
+    "release" : 1.4 ,
+    "attackCurve" : "exponential"
+    }
 }).toMaster()
 
 const sequencerInput = document.querySelector('.sequencer')

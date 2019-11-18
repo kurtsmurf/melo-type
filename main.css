@@ -14,7 +14,7 @@ body {
 
 h1 {
   font-size: 1.6rem;
-  margin: .4rem 0;
+  margin: .7rem 0;
   color: rgb(54, 54, 54);
 }
 
@@ -94,5 +94,5 @@ main {
 
 footer {
   margin-top: auto;
-  padding: 2rem 0;
+  padding: 1.6rem 0;
 }
