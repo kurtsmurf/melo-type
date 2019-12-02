@@ -25,6 +25,7 @@ main {
 }
 
 .sequencer {
+  min-height: 11rem;
   resize: vertical;
   margin: 1.2rem 0;
   font-size: 1.6rem;
